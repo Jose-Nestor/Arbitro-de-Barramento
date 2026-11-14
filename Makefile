@@ -104,14 +104,27 @@ endif
 
 .PHONY: clean
 
+# Remove a compilação e os registros de execução.
+# Preserva as formas de onda.
 clean:
-	rm -rf -- xcelium.d
-	rm -f -- xrun.log xrun.history xrun.key
+	@echo "Removendo arquivos temporários da simulação..."
+	rm -rf -- $(SIM_BUILD_DIRS)
+	rm -f -- $(SIM_LOG_FILES)
+	@echo "Limpeza concluída. Formas de onda preservadas."
 
 .PHONY: clean-waves
 
-clean-waves: clean
-	rm -rf -- waves.shm
+# Remove somente os bancos de formas de onda.
+clean-waves:
+	@echo "Removendo bancos de formas de onda..."
+	rm -rf -- $(WAVE_DIRS)
+
+.PHONY: clean-all
+
+# Remove todos os arquivos temporários listados acima.
+clean-all: clean clean-waves
+	@echo "Limpeza completa da simulação concluída."
+
 
 .PHONY: setup
 

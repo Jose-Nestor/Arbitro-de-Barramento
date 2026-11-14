@@ -1,0 +1,45 @@
+# Credenciais e configurações locais
+.env
+.env.*
+!.env.example
+
+# Arquivos temporários e logs
+*.tmp
+*.temp
+*.log
+*~
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Xcelium: compilação e arquivos de execução
+xcelium.d/
+xcelium.d_backup/
+xrun.history
+xrun.key
+xmvlog.key
+xmelab.key
+xmsim.key
+.xmlib.lock
+
+# SimVision: arquivos locais da interface
+.simvision/
+simvision.key
+
+# Bancos e arquivos de formas de onda
+*.shm/
+*.vcd
+*.vcd.gz
+*.fst
+
+# Genus: logs de comandos da sessão
+genus.cmd
+genus.cmd[0-9]*
+
+# Arquivos do sistema operacional
+.DS_Store
+Thumbs.db
